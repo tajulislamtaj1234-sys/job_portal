@@ -1,18 +1,43 @@
 {% extends 'base.html' %}
+
 {% block title %}
 Home
 {% endblock %}
 
 {% block content %}
 
-<div class="container py-5">
+<section class="hero">
 
-    <h1>Welcome To Job Portal</h1>
+    <div class="container">
 
-    <p>
-        Find your dream job.
-    </p>
+        <div class="hero-content">
 
-</div>
+            <h1>Find Your Dream Job</h1>
+
+            <p>
+                Discover thousands of job opportunities from trusted companies.
+            </p>
+
+            <form class="search-form">
+
+                <input
+                        type="text"
+                        placeholder="Job title">
+
+                <input
+                        type="text"
+                        placeholder="Location">
+
+                <button>
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
