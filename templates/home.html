@@ -6,6 +6,7 @@ Home
 
 {% block content %}
 
+
 <section class="hero">
 
     <div class="container">
@@ -37,6 +38,7 @@ Home
         </div>
 
     </div>
+</section>
 
 <section class="categories">
 
@@ -66,17 +68,89 @@ Home
                 📦 Logistics
             </div>
             <div class="category-card">
-               🏥 Healthcare
+                🏥 Healthcare
             </div>
             <div class="category-card">
-               ⚖️ Legal
+                ⚖️ Legal
             </div>
 
 
         </div>
 
     </div>
-
 </section>
 
-{% endblock %}
+<section class="featured-jobs">
+
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Featured Jobs
+        </h2>
+    </div>
+
+    <div class="job-list">
+    </div>
+
+
+    {% for job in jobs %}
+
+    <div class="job-card">
+
+        <h3>{{ job.title }}</h3>
+
+        <p class="company">
+            {{ job.company }}
+        </p>
+
+        <p class="location">
+            📍 {{ job.location }}
+        </p>
+
+        <div class="job-footer">
+
+
+            {% if job.type == "Full Time" %}
+
+            <span class="badge bg-primary">
+                    {{ job.type }}
+                </span>
+
+            {% elif job.type == "Remote" %}
+
+            <span class="badge bg-success">
+                    {{ job.type }}
+                </span>
+
+            {% elif job.type == "Part Time" %}
+
+            <span class="badge bg-warning text-dark">
+                    {{ job.type }}
+                </span>
+
+            {% else %}
+
+            <span class="badge bg-secondary">
+                    {{ job.type }}
+                </span>
+
+            {% endif %}
+
+            </span>
+
+            <button class="btn btn-primary">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+</section>
+
+</div>
+{% endblock  %}
